@@ -1,4 +1,4 @@
-# LinkedIn scraper using headless browser
+# LinkedIn Scraper using Puppeteer (and Chromium)
 
 This is a quick and dirty script for scraping LinkedIn contacts quickly, for sales lead generation. It also allowed me to learn Puppeteer.
 
