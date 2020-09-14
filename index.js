@@ -28,12 +28,9 @@ async function run() {
 	await page.waitForNavigation;
 
 	const titleToSearch = 'business%20development%20manager';
-	const geoToSearch = 'gb'
+	// const geoToSearch = 'gb'
 
-	// then repeat for head of growth, us
 	const searchURL = `https://www.linkedin.com/search/results/people/?facetGeoRegion=%5B%22gb%3A0%22%5D&facetIndustry=%5B%2298%22%5D&facetProfileLanguage=%5B%22en%22%5D&origin=FACETED_SEARCH&title=${titleToSearch}`
-	// const searchURL = `https://www.linkedin.com/search/results/people/?facetGeoRegion=%5B%22us%3A0%22%5D&facetProfileLanguage=%5B%22en%22%5D&origin=FACETED_SEARCH&title=${titleToSearch}`
-	// const searchURL = `https://www.linkedin.com/search/results/people/?facetGeoRegion=%5B%22${geoToSearch}%3A0%22%5D&facetIndustry=%5B%2280%22%2C%2298%22%5D&facetProfileLanguage=%5B%22en%22%5D&origin=FACETED_SEARCH&title=${titleToSearch}`
 
 	// Set up CSV file
 	const createCsvWriter = require('csv-writer').createObjectCsvWriter;
@@ -118,7 +115,6 @@ async function run() {
 			return data
 		})
 
-
 		async function getCompanyNameFromProfile(browser, profileLink) {
 			const profilePage = await browser.newPage();
 			await profilePage.goto(profileLink);
@@ -154,9 +150,7 @@ async function run() {
 			.then(() => console.log('Page' + h + ': CSV written successfully'));
 	}
 
-
 	await browser.close();
 }
-
 
 run();

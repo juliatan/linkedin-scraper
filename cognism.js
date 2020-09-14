@@ -73,10 +73,7 @@ async function run() {
 
         await csvWriter.writeRecords([emailObject])
       }
-
     }
-
-    
   }
 }
 
